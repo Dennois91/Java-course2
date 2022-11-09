@@ -1,0 +1,12 @@
+Byt ut textfältet där filnamnen skrivs in mot en JComboBox.
+Ändra programmet så att det automatiskt kommer ihåg de 5 senaste filerna som redigerats och visar
+dem i comboboxens dropdown.
+Namnen på filerna sparas i en egen fil ”filecache.txt” och läses in när programmet startar.
+När programmet avslutar, skriv ner filnamnen som står i dropdown:en till ”filecache.txt”
+-------------<< EOF >>-----------
+Byt ut textfältet där filnamnen skrivs in mot en JComboBox.
+Ändra programmet så att det automatiskt kommer ihåg de 5 senaste filerna som redigerats och visar
+dem i comboboxens dropdown.
+Namnen på filerna sparas i en egen fil ”filecache.txt” och läses in när programmet startar.
+När programmet avslutar, skriv ner filnamnen som står i dropdown:en till ”filecache.txt”
+-------------<< EOF >>-----------

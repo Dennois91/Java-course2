@@ -1,0 +1,4 @@
+Byt ut textfältet där filnamnen skrivs in mot en JComboBox.
+Ändra programmet så att det automatiskt kommer ihåg de 5 senaste filerna som redigerats och visar
+
+---

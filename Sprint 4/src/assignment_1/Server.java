@@ -11,7 +11,6 @@ public class Server implements Runnable {
     public Server() {
 
     }
-
     public void run(){
                 System.out.println("Server running");
 

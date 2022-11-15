@@ -14,19 +14,23 @@ public class Client {
         ) {
             String input;
             Object fromServer;
-            fromServer = in.readObject();
-            System.out.println(fromServer);
 
-            while ((input = userInput.readLine()) != null) {
-                out.println(input);
-                System.out.println("message sent to server: " + input);
+            while ((fromServer = in.readObject()) != null) {
 
-                fromServer = in.readObject();
-                if (fromServer instanceof Person p) {
-                    System.out.println(p.getName() + "  " + p.getIdNr() + "  " + p.getAdress() + "  " + p.getPhone());
+                if (fromServer instanceof Intro) {
+                    System.out.println("Connection initiated");
 
-                } else if (fromServer instanceof String) {
-                    System.out.println(fromServer);
+                } else if (fromServer instanceof Response) {
+                    if (!((Response) fromServer).isSuccess()) {
+                        System.out.println("No match in system");
+                    } else {
+                        System.out.println(((Response) fromServer).getPerson().getAdress());
+                    }
+                }
+                System.out.println("Enter name to search database: ");
+                input = userInput.readLine();
+                if (input != null) {
+                    out.println(input);
                 }
             }
         } catch (IOException ignored) {

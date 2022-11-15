@@ -19,18 +19,19 @@ public class Server {
              ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
              BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()))
         ) {
-            out.writeObject("Connected to server. Enter name to search database");
+            out.writeObject(new Intro());
 
             String request;
             while ((request = in.readLine()) != null){
                 Person answer = d.search(request.trim());
                 if(answer == null){
-                out.writeObject("Cant find name in database");
+                out.writeObject(new Response(false));
                 }
-                out.writeObject(answer);
+                out.writeObject(new Response(true,answer));
             }
         }catch (IOException e ){
-            System.out.println("server start inte");
+            e.printStackTrace();
+            System.out.println("server didnt start");
         }
     }
 
